@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+
+    <style>
+        .content {
+            border: 2px solid black;
+            padding: 20px;
+            margin: 10px auto;
+            background-color:lavender;
+            width: 50vh;
+            display: flex;
+            justify-items: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div >
+        <h1 style="text-align: center;">Form:-</h1><br>
+        <div class="content">
+            <form action="day_1-form.html"> 
+                <table>
+                <tr>
+                   <td><label for="name">Name:</label></td>
+                <td><input type="text" id="name" name="name" placeholder="Enter your name"></td>
+                </tr>
+                <tr>
+                    <td><label for="Dept">Department:</label></td>
+                    <td>
+                        CSE<input type="checkbox" name="Dept" value="CSE">
+                        ECE<input type="checkbox" name="Dept" value="ECE">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender:</label></td>
+                    <td><input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label type="number" for="number"></label>Phone: </td>
+                    <td><input type="number" id="number" name="number" placeholder="Enter your phone number"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email" placeholder="Enter your email"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; margin-left: 10px auto;"><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+           
+        </div>
+    </div>
+    
+</body>
+</html>
