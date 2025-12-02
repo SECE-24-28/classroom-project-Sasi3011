@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CSS Basics</h1>
+    <p>This is a paragraph demonstrating basic CSS styling.</p>
+    <div class="outercontainer">
+        <div class="innerbo">
+            <div class="box sti">Item-1</div>
+            <div class="box nav">Item-2</div>
+            <div class="box scr">Item-3</div>
+            <div class="box abc">Item-4</div>
+        </div>
+        </div>
+    <style>
+        .outercontainer {
+            border:1px solid black;
+            width: 400px;
+            height: 400px;
+            margin: auto;
+        }
+        .innerbo {
+            border:10px solid red;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+        .abc {
+            background-color: yellow;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+        }
+        .box {
+            border: 2px solid black;
+            margin: 10px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+        .sti {
+            background-color: lightblue;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+        }
+        .nav {
+            background-color: lightgreen;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+        }
+        .scr {
+            background-color: lightcoral;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            line-height: 80px;
+        }
+        h1 {
+            color: #3333cc;
+            text-align: center;
+        }
+        p {
+            color: #666666;
+            font-size: 16px;
+            margin: 20px;
+        }
+    </style>
+</body>
+</html>
