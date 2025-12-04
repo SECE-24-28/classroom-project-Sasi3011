@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            padding: 0px;
+            margin: 0px;
+        }
+    nav
+        {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background-color:silver;
+            padding: 10px;
+            color: white;
+        }
+        ol
+        {
+            list-style-type: none;
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: space-evenly;
+        }
+        li
+        {
+            padding-left: 10px;
+            font-size: 1.2rem;
+        }
+        video
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .txt
+        {
+            color: white;
+            position: fixed;
+            top: 200px;
+            left: 20px;
+        }
+        p
+        {
+            width: 600px;
+        }
+        img
+        {
+            width: 30px;
+            height: 30px;
+            padding-left:5px;
+            border-radius: 50%;
+        }
+        img:hover
+        {
+        transform: translateY(-5px);
+        }
+        footer
+        {
+            position: fixed;
+            left: 20px;
+            bottom: 10px;
+        }
+        button
+        {
+            padding: 5px;
+            transition: all 0.3s;
+        }
+        button:hover
+        {
+            letter-spacing: 4px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video src="https://res.cloudinary.com/dnmvriw3e/video/upload/v1756867453/samples/elephants.mp4" autoplay muted loop></video>
+    </div>
+    
+    <main>
+        <nav>
+            <h1>Navigation Bar</h1>
+            <ol>
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ol>
+            
+        </nav>
+        
+        <div class="content">
+            <h1>Welcome to My Website</h1>
+            <p>
+                This is a sample website with a navigation bar and a background video.
+            </p>
+            <button>Click Me</button>
+        </div>
+        <footer>
+             <ol>
+                <li><img src="https://res.cloudinary.com/dnmvriw3e/image/upload/v1764737084/download_gynnoq.png" alt=""></li>
+                <li><img src="WH.png" alt=""></li>
+                <li><img src="TW.png" alt=""></li>
+            </ol>
+        </footer>
+    </main>
+</body>
+</html>
