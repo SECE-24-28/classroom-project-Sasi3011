@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+        
+        form {
+            background-color: lightyellow;
+            width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            border: 3px solid black;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border: 2px solid gray;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: darkblue;
+        }
+        
+        button {
+            background-color: red;
+            color: white;
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <label for="ip1">Name :</label>
+    <input id="ip1" type="text" maxlength="50">
+
+    <label for="ip2">Email :</label>
+    <input id="ip2" type="email">
+
+    <button id="btn" type="submit">Submit</button>
+</form>
+
+    <script>    
+    let ip1 = document.getElementById("ip1");
+    let ip2 = document.getElementById("ip2");
+    let btn = document.getElementById("btn");
+
+    btn.addEventListener("click", function(event){
+        let nameV = ip1.value;
+        let emailV = ip2.value;
+       
+        if(nameV === "" || nameV.length > 50){
+            alert("Please enter a valid name (max 50 characters).");
+            event.preventDefault();
+            return;
+        }
+
+        if(emailV === "" || !emailV.match(/[a-zA-Z.]+@[a-zA-Z.]+\.com/)){
+            alert("Please enter a valid email address.");
+            event.preventDefault();
+            return;
+        }
+        alert("Form submitted successfully!");
+    });
+    </script>
+</body>
+</html>
