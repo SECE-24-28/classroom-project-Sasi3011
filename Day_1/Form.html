@@ -1,62 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FORM</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>online application form with all validations</title>
 
-    <style>
-        .content {
-            border: 2px solid black;
-            padding: 20px;
-            margin: 10px auto;
-            background-color:lavender;
-            width: 50vh;
-            display: flex;
-            justify-items: center;
-            
-        }
-    </style>
+<style>
+    .form-container{
+        max-width:500px;
+        margin:50px auto;
+        padding:30px;
+        border:2px solid #333;
+        border-radius:8px;
+        background:#f9f9f9;
+    }
+    h1{
+        text-align:center;
+        color:#333;
+    }
+
+    /* success message */
+    .msg{
+        display:none;
+        max-width:500px;
+        margin:20px auto;
+        padding:20px;
+        border-radius:6px;
+        background:#d1ffd6;
+        border:2px solid green;
+        text-align:center;
+        font-size:18px;
+    }
+    #success:target{
+        display:block;
+    }
+</style>
+
 </head>
 <body>
-    <div >
-        <h1 style="text-align: center;">Form:-</h1><br>
-        <div class="content">
-            <form action="day_1-form.html"> 
-                <table>
-                <tr>
-                   <td><label for="name">Name:</label></td>
-                <td><input type="text" id="name" name="name" placeholder="Enter your name"></td>
-                </tr>
-                <tr>
-                    <td><label for="Dept">Department:</label></td>
-                    <td>
-                        CSE<input type="checkbox" name="Dept" value="CSE">
-                        ECE<input type="checkbox" name="Dept" value="ECE">
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="gender">Gender:</label></td>
-                    <td><input type="radio" name="gender" value="male"> Male
-                    <input type="radio" name="gender" value="female"> Female
-                    </td>
-                </tr>
-                <tr>
-                    <td> <label type="number" for="number"></label>Phone: </td>
-                    <td><input type="number" id="number" name="number" placeholder="Enter your phone number"></td>
-                </tr>
-                <tr>
-                    <td><label for="email">Email:</label></td>
-                    <td><input type="email" id="email" name="email" placeholder="Enter your email"></td>
-                </tr>
-                <tr>
-                    <td style="text-align: center; margin-left: 10px auto;"><button type="submit">Submit</button></td>
-                </tr>
-            </table>
-        </form>
-           
-        </div>
-    </div>
-    
+
+<div class="form-container">
+<h1>Online Application Form</h1>
+
+<!-- Important -->
+<form action="#success" method="post">
+
+    <!-- Only letters and space -->
+    <label for="fullname">Full Name:</label><br>
+    <input type="text" id="fullname" name="fullname"
+           pattern="[A-Za-z ]{3,}" 
+           title="Name must contain only letters, minimum 3 characters"
+           required><br><br>
+
+    <!-- HTML email validator -->
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <!-- Age -->
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age" min="1" max="120" required><br><br>
+
+    <!-- dropdown -->
+    <label for="course">Choose a course:</label><br>
+    <select id="course" name="course" required>
+        <option value="">--Please choose an option--</option>
+        <option value="math">Mathematics</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+        <option value="art">Art</option>
+    </select><br><br>
+
+    <!-- Numeric -->
+    <label for="duration">Duration (in months):</label><br>
+    <input type="number" id="duration" name="duration" min="1" max="60" required><br><br>
+
+    <!-- phone -->
+    <label for="phone">Phone Number:</label><br>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"
+           title="Enter a valid 10 digit number"
+           maxlength="10" required><br><br>
+
+    <!-- strong password -->
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"
+           minlength="8"
+           pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}"
+           title="Must contain uppercase, lowercase, number, special character, min 8 characters"
+           required><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+</div>
+
+<!-- success message -->
+<div id="success" class="msg">
+    <h2>✅ Application Submitted Successfully!</h2>
+    <p>Thank you for applying. We will contact you soon.</p>
+</div>
+
 </body>
 </html>
