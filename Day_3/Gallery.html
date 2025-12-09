@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+            h1 {
+                color: #333;
+                margin-bottom: 20px;
+            }
+            img {
+                border: 2px solid #333;
+                border-radius: 8px;
+                margin-bottom: 20px;
+            }
+            button {
+                padding: 10px 20px;
+                margin: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 4px;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+        <script>
+            let images = ["1.jpg", "2.jpg","3.jpg", "4.jpg","5.jpg"];
+            let i = 0;
+            function next()
+            {
+                let img = document.getElementById("im");
+                i++;
+                if(i >= images.length)
+                {
+                    i = 0;
+                }
+                img.src = images[i];
+            }
+            function prev()
+            {
+                let img = document.getElementById("im");
+                i--;
+                if(i < 0)
+                {
+                    i = images.length - 1;
+                }
+                img.src = images[i];
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Image Slider</h1>
+        <img id="im" src="1.jpg" alt="facebook" width="250px" height="400px">
+        <br>
+        <button onclick="prev()">Previous</button>
+        <button onclick="next()">Next</button>
+    </body>
+</html>

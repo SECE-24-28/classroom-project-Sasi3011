@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SumaJS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9fafb; /* Light background */
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            background-color: #ffffff; /* Light form background */
+            color: black; /* Dark text color */
+            border-radius: 12px;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            border: 1px solid #e5e7eb; /* Light border */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .input-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input {
+            width: 150px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db; /* Light border */
+            color: black;
+            outline: none;
+        }
+
+        input:focus {
+            box-shadow: 0 0 0 2px #3b82f6;
+        }
+
+        input[readonly] {
+            background-color: #f3f4f6; /* Light readonly background */
+        }
+
+        .operators {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        button {
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .op-btn {
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .btn-plus {
+            background-color: #3b82f6;
+        }
+
+        .btn-plus:hover {
+            background-color: #2563eb;
+        }
+
+        .btn-minus {
+            background-color: #10b981;
+        }
+
+        .btn-minus:hover {
+            background-color: #059669;
+        }
+
+        .btn-multiply {
+            background-color: #f59e0b;
+        }
+
+        .btn-multiply:hover {
+            background-color: #d97706;
+        }
+
+        .btn-divide {
+            background-color: #8b5cf6;
+        }
+
+        .btn-divide:hover {
+            background-color: #7c3aed;
+        }
+
+        .btn-reset {
+            background-color: #ef4444;
+            align-self: center;
+            margin-top: 16px;
+        }
+
+        .btn-reset:hover {
+            background-color: #dc2626;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <h1>Calculator</h1>
+
+        <div class="input-row">
+            <label for="ip1">Input - 1 :</label>
+            <input type="number" id="ip1">
+        </div>
+
+        <div class="input-row">
+            <label for="ip2">Input - 2 :</label>
+            <input type="number" id="ip2">
+        </div>
+
+        <div class="input-row">
+            <label for="res">Result :</label>
+            <input type="number" id="res" readonly>
+        </div>
+
+        <div class="operators">
+            <button type="button" class="op-btn btn-plus" onclick="plus()">+</button>
+            <button type="button" class="op-btn btn-minus" onclick="minus()">−</button>
+            <button type="button" class="op-btn btn-multiply" onclick="multiply()">×</button>
+            <button type="button" class="op-btn btn-divide" onclick="divide()">÷</button>
+        </div>
+
+        <button type="button" class="btn-reset" onclick="location.reload()">Reset</button>
+    </form>
+
+    <script>
+        let ip1 = document.getElementById("ip1");
+        let ip2 = document.getElementById("ip2");
+        let res = document.getElementById("res");
+
+        function plus(){
+            res.value = Number(ip1.value) + Number(ip2.value);
+        }
+
+        function minus(){
+            res.value = Number(ip1.value) - Number(ip2.value);
+        }
+
+        function multiply(){
+            res.value = Number(ip1.value) * Number(ip2.value);
+        }
+
+        function divide(){
+            if(Number(ip2.value) === 0){
+                alert("Cannot divide by zero");
+                return;
+            }
+            res.value = Number(ip1.value) / Number(ip2.value);
+        }
+    </script>
+
+</body>
+</html>

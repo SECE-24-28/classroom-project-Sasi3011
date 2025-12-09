@@ -5,140 +5,146 @@
     <title>DAY-3</title>
 
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html, body{
-            width: 100%;
-            height: 100%;
-        }
-
-        .cnt{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-
-            padding: 20px;
-            color: white;
-            z-index: 1;
-        }
-
-        ol{
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-        a{
-            text-decoration: none;
-            color: white;
-            font-size: 20px;
-        }
-
-        .vid{
-            position: fixed;
-            top: 0;
-            left: 0;
-
+        body {
             width: 100%;
             height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
             overflow: hidden;
         }
 
-        video{
+        .vid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        video {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .tex{
-            top: 30%;
-            left: 36%;
+        .cnt {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
+            padding: 20px 40px;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .cnt h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        ol {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #ffd700;
+        }
+
+        .tex {
             position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
             z-index: 1;
         }
-        .tex h1{
-            color: white;
-            font-size: 50px;
+
+        .tex h1 {
+            font-size: 48px;
             margin-bottom: 20px;
-            
+            color: black;
         }
 
-        .tex button{
-            border-radius: 10%;
-            text-decoration: none;
-            padding: 15px 15px;
-            font-size: 20px;
-            margin-left: 70px;
-            background-color: blue;
-            color: rgba(255, 255, 255, 0.676);
-            background-image: linear-gradient(45deg, black, purple);
-        }
-
-        .tex button:hover{
-            background-image: linear-gradient(360deg, purple, black);
-            font-size: 25px;
-            position: absolute;
+        .tex button {
+            padding: 15px 35px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffd700;
+            color: white;
+            cursor: pointer;
             transition: 0.3s;
-            letter-spacing: 4px;
-            margin-left: 10px;
+            font-weight: bold;
         }
 
-
-        .foot{
+        .foot {
             position: absolute;
+            bottom: 20px;
+            left: 20px;
             display: flex;
-            gap: 20px;
-            bottom: 10px;
-            left: 10px;
-        }
-        .foot img{
-            width: 40px;
-            border-radius: 50%;
+            gap: 15px;
+            z-index: 1;
         }
 
-        .foot img:hover{
-            transform: scale(0.8);
+        .foot img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
             transition: 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px;
+        }
+
+        .foot img:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
 <body>
 
+    <div class="vid">
+        <video src="samma.mp4" autoplay loop muted></video>
+    </div>
+
     <div class="cnt">
         <h1>Travel</h1>
         <ol>
-           <a href=""><li>Home</li></a> 
-            <a href=""><li>About</li></a>
-            <a href=""><li>Contact</li></a>
-            <a href=""><li>Gallery</li></a>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Gallery</a></li>
         </ol>
-    </div>
-
-    <div class="vid">
-        <video src="samma.mp4" autoplay loop muted></video>
     </div>
 
     <div class="tex">
         <h1>Welcome to My Web!</h1>
         <a href="https://www.google.com" target="_blank">
-            <button>Touch me, if you dare! 😏😏</button>
+            <button>Click</button>
         </a>
     </div>
 
     <div class="foot">
-        <img src="FB.png" alt="">
-        <img src="WH.png" alt="">
-        <img src="TW.png" alt="">
+        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=50&h=50&fit=crop" alt="Facebook">
+        <img src="https://images.unsplash.com/photo-1516321498910-9b03fb1213b0?w=50&h=50&fit=crop" alt="WhatsApp">
+        <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?w=50&h=50&fit=crop" alt="Twitter">
     </div>
 
 </body>
