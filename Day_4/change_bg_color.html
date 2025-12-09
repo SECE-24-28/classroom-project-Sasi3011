@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>change bg color</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 30px ;
+        }
+        button:hover {
+            background-color: #ddd;
+        }
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            transition: color 0.5s;
+
+
+        }
+    </style>
+</head>
+<body id="main" style="background-color: white">
+    <h1 id="h1" style="color: black;">Light Mode</h1>
+
+    <button id="btn" onclick="change()">click me</button>
+
+    <script>
+        function change() {
+            let body = document.getElementById("main");
+            let title = document.getElementById("h1");
+
+            if (body.style.backgroundColor === "white") {
+               
+                body.style.backgroundColor = "black";
+                title.style.color = "white";
+                title.innerText = "Dark Mode";
+            } else {
+               
+                body.style.backgroundColor = "white";
+                title.style.color = "black";
+                title.innerText = "Light Mode";
+            }
+        }
+    </script>
+
+</body>
+</html>

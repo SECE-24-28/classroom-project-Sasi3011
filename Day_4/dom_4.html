@@ -1,0 +1,22 @@
+<!DOCTYPE html
+>
+<html>
+    <head>
+<script>
+function add()
+{
+    let ul=document.getElementById("ulist");
+    let inputBox=document.getElementById("inputBox");
+    let li=document.createElement("li");
+    li.innerText=inputBox.value;
+    ul.appendChild(li);
+    inputBox.value="";
+}
+</script>
+    </head>
+    <body id="main">
+        <input type="text" id="inputBox" placeholder="Type something here">
+        <button id="btn" onclick="add()">Add Items</button>
+                <ol id="ulist"></ol>
+
+    </body>

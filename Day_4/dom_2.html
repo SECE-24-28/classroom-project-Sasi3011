@@ -1,0 +1,23 @@
+<!--delete the heading while pressing the button-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document Object Model</title>
+        <script>
+            function press()
+            {
+                
+                let body = document.getElementById("main");
+                let hhd=document.getElementById("hd");
+                alert("Delete successful");
+                body.removeChild(hhd);
+                    }
+        </script>
+    </head>
+    <body id="main">
+        <h1 id="hd">PEACOCK</h1>
+        <button id="btn" onclick="press()">Delete Heading</button>
+        
+        </body>
+</html>

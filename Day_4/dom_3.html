@@ -1,0 +1,17 @@
+<!--adding event listener like onclick during runtime-->
+
+<!DOCTYPE html> 
+<html>
+    <head>
+
+    </head>
+    <body>
+        <button id="bt">click me </button>  
+        <script>
+            let btn=document.getElementById("bt");
+            btn.addEventListener("click",function(){                      //here click is the event listener and function() is the function to perform when the event occurs 
+                alert("Button clicked using Event Listener");
+            });
+        </script>
+    </body>
+</html>
