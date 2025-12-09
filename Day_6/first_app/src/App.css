@@ -1,0 +1,5 @@
+/* Simple app-level styles */
+#root { text-align: center; }
+
+#name { font-size: 1.25rem; color: #555; }
+#name:hover { color: #333; }

@@ -5,7 +5,7 @@ import Content from './Content.jsx'
 
 function App() {
 let demo=(name)=>{
-  console.log("Hello Sree" + name);
+  console.log("Hello Sasikiran " + name);
 }
 
   return (

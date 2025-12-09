@@ -1,0 +1,15 @@
+/* Simple form styles */
+.form-container { max-width: 600px; margin: 16px auto; padding: 12px; }
+
+.form-table { width: 100%; border-collapse: collapse; }
+.form-table td { padding: 8px; vertical-align: top; }
+.form-table label { display: block; margin-bottom: 4px; color: #444; }
+
+.form-table input,
+.form-table select,
+.form-table textarea { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+
+.submit-btn { padding: 10px 12px; border: 1px solid #ddd; border-radius: 4px; background: #fff; cursor: pointer; }
+.submit-btn:hover { background: #f5f5f5; }
+
+.horizontal-group { display: flex; gap: 8px; }

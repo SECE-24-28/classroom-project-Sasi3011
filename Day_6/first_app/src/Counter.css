@@ -1,0 +1,20 @@
+/* Simple counter styles */
+#increment {
+  font-size: 1rem;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+#increment:hover { background: #f5f5f5; }
+
+div { max-width: 600px; margin: 16px auto; padding: 12px; color: #222; }
+
+h1 { text-align: center; font-size: 1.5rem; }
+
+.buttons { display: flex; justify-content: center; gap: 8px; }
