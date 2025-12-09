@@ -1,0 +1,31 @@
+:root {
+  color: rgba(0, 0, 0, 0.87); /* Changed text color */
+  background-color: #e0e0e0; /* Changed background color */
+}
+
+a {
+  color: #007bff; /* Changed link color */
+}
+a:hover {
+  color: #0056b3; /* Changed hover link color */
+}
+
+button {
+  background-color: #f0f0f0; /* Changed button background color */
+}
+button:hover {
+  border-color: #007bff; /* Changed button hover border color */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #333333; /* Changed light mode text color */
+    background-color: #ffffff; /* Light mode background color */
+  }
+  a:hover {
+    color: #0056b3; /* Changed light mode hover link color */
+  }
+  button {
+    background-color: #ffffff; /* Changed light mode button background color */
+  }
+}
