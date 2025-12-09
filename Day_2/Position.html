@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+body {
+    background-color: #f0f0f0; /* Changed to a slightly darker grey */
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #add8e6; /* Changed to a lighter blue */
+    border: 2px solid #000; /* Kept the border color */
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+    transition: transform 0.2s; /* Added hover effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+h1 {
+    color: black; /* Changed to a darker color for better contrast */
+}
+        </style>
+    </head>
+    <body>
+
+        <h1><i>Responsive Flash Card</i></h1>
+        <div class="container">
+            <div class="card">
+                <h1>CARD 1</h1>
+                <p>This is a card no. 1</p>
+            </div>
+
+            <div class="card">
+                <h1>CARD 2</h1>
+                <p>This is a card no. 2</p>
+            </div>  
+
+            <div class="card">
+                <h1>CARD 3</h1>     
+                <p>This is a card no. 3</p> 
+            </div>
+
+            <div class="card">
+                <h1>CARD 4</h1>
+                <p>This is a card no. 4</p>
+            </div>
+
+            <div class="card">
+                <h1>CARD 5</h1>
+                <p>This is a card no. 5</p>
+            </div>
+
+            <div class="card">
+                <h1>CARD 6</h1>
+                <p>This is a card no. 6</p>
+            </div>
+        </div>
+    </body>
+</html>

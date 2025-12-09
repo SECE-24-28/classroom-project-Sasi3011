@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style>
+            body{
+                height:200vh;
+            }
+            .outer-container{
+            
+                border: 1px solid black;
+                width: 80vw;
+                height:80vh;
+                margin: 20px auto;
+            }
+            .inner-container{
+                              
+
+                border: 1px dashed red;
+                width:60vw;
+                height: 80vh;
+                margin: 20px auto;
+            }
+            .box{
+                height:100px;
+                border:1px solid black;
+                border-radius: 6px;
+                width: 100px;
+                color:white;
+            }
+            .abs{
+                background-color: green;
+                position:absolute;
+                top:150px;
+                left:0px;
+            }
+            .rel{
+                background-color: blue;
+                position:relative;
+                top: 10px;
+                left:100px;
+            }
+            .fix{
+                background-color: orange;
+                position:fixed;
+                top: 0px;
+                left: 0px;
+            }
+            .sti{
+                background-color: red;
+                position: sticky;
+                top:100px;
+                left:100px;             }
+        </style>
+    </head>
+    <body>
+        <div class="outer-container">
+            <div class="inner-container">
+                <div class="box abs">absolute div</div>
+                <div class="box rel">relative div</div>
+                <div class="box sti">sticky div</div>
+                <div class="box fix">fixed div</div>
+            </div>
+        </div>
+    </body>
+</html>
