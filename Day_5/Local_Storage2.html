@@ -4,33 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-         <input type="text" id="t1">
-         <input type="text" id="t2">
-         <button id="bt">Save</button>
-         <button id="rd">Read</button>
-         <script>
-            let t1=document.getElementById("t1");
-            let t2=document.getElementById("t2");
-            let btn=document.getElementById("bt");
-            let read=document.getElementById("rd");
-            let contactList=[]
-            btn.addEventListener("click",()=>
+    <input type="text" id="t1" placeholder="Name">
+    <input type="text" id="t2" placeholder="Phone">
+    <button id="bt">Save</button>
+    <button id="rd">Read</button>
+    <script>
+        let t1=document.getElementById("t1");
+        let t2=document.getElementById("t2");
+        let btn=document.getElementById("bt");
+        let read=document.getElementById("rd");
+        let contactList=[]
+        btn.addEventListener("click",()=>
         {
             let na=t1.value;
             let ph=t2.value;
             let frnd={fna:na,fph:ph}
             contactList.push(frnd);
-         localStorage.setItem("contact",JSON.stringify(contactList));
-         t1.value="";
-         t2.value="";
+            localStorage.setItem("contact",JSON.stringify(contactList));
+            t1.value="";
+            t2.value="";
         })
 
-         read.addEventListener("click",()=>
+        read.addEventListener("click",()=>
         {
             let list=JSON.parse(localStorage.getItem("contact"))
         })
-         </script>
+    </script>
 </body>
 </html>
