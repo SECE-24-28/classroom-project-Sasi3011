@@ -1,29 +1,34 @@
-import React from 'react'
-import './App.css'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import api from './api/Feedback'
-function App() {
-  const[post,setPost]=useState([])
+import Home from './Home'
+import './App.css'
 
-  useEffect(()=>{
-    const fetData=async()=>{
-      const response=await api.get("/feedback")
-      console.log(response.data)
-      setPost(response.data)  
+function App() {
+  const [post, setPost] = useState([])
+  const [search, setSearch] = useState("")
+
+  useEffect(() => {
+    const fetData = async () => {
+      const response = await api.get("/feedback")
+      setPost(response.data)
     }
-    fetData();
-  },[])
+    fetData()
+  }, [])
+
   return (
-    <>
-      {
-        post.map((post)=>(
-          <p key={post.id}>
-            {post.id} - {post.title} - {post.timedate} - {post.body}
-          </p>
-        ))
-      }
-    </>
+    <div className="container">
+      <h1 className="title">Feedback List</h1>
+
+      <input
+        className="searchBox"
+        type="text"
+        placeholder="Search feedback..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+
+      <Home post={post} search={search} />
+    </div>
   )
 }
 

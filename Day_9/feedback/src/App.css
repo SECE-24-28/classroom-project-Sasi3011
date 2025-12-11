@@ -1,0 +1,49 @@
+.container {
+  width: 500px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.searchBox {
+  width: 100%;
+  padding: 8px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fafafa;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cardBody {
+  font-size: 14px;
+  color: #444;
+}
+
+.noResult {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #777;
+}
