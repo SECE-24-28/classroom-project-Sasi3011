@@ -1,0 +1,28 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Node.js Basics",
+      "description": "Introduction to Node.js and its core modules.",
+      "level": "Beginner"
+    },
+    {
+      "id": 2,
+      "name": "Express.js Fundamentals",
+      "description": "Learn how to build web applications using Express.js framework.",
+      "level": "Intermediate"
+    },
+    {
+      "id": 3,
+      "name": "Working with Databases",
+      "description": "Connecting Node.js applications to databases like MongoDB and MySQL.",
+      "level": "Intermediate"
+    },
+    {
+      "id": 4,
+      "name": "Asynchronous Programming",
+      "description": "Understanding callbacks, promises, and async/await in Node.js.",
+      "level": "Advanced"
+    }
+  ]
+}
