@@ -14,6 +14,7 @@ const Home = ({ post, search }) => {
         filtered.map((item) => (
           <div className="card" key={item.id}>
             <h3 className="cardTitle">{item.title}</h3>
+            <small>{item.datatime}</small>
             <p className="cardBody">{item.body}</p>
           </div>
         ))
