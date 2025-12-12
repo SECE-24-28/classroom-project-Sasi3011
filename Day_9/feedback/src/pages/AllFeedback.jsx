@@ -19,7 +19,7 @@ const AllFeedback = () => {
         </button>
       </div>
 
-      <FeedbackList post={post} />
+      <FeedbackList post={post} showActions={true} />
     </div>
   );
 };

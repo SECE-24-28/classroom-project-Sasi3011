@@ -1,24 +1,36 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import DataContext from "../context/DataContext";
 import "../App.css";
 
 const AddFeedbackModal = () => {
-  const { addNewFeedback, setModalOpen } = useContext(DataContext);
+  const { addNewFeedback, updateFeedback, setModalOpen, editItem, setEditItem } = useContext(DataContext);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+
+  useEffect(() => {
+    if (editItem) {
+      setTitle(editItem.title);
+      setBody(editItem.body);
+    }
+  }, [editItem]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!title || !body) return;
 
-    addNewFeedback(title, body);
+    if (editItem) {
+      updateFeedback(editItem.id, title, body);
+      setEditItem(null);
+    } else {
+      addNewFeedback(title, body);
+    }
     setModalOpen(false);
   };
 
   return (
     <div className="modalOverlay">
       <div className="modalBox">
-        <h2>Add Feedback</h2>
+        <h2>{editItem ? "Edit Feedback" : "Add Feedback"}</h2>
 
         <form onSubmit={handleSubmit}>
           <input
@@ -36,8 +48,11 @@ const AddFeedbackModal = () => {
           />
 
           <div className="modalActions">
-            <button className="btn" type="submit">Add</button>
-            <button className="btnCancel" onClick={() => setModalOpen(false)}>
+            <button className="btn" type="submit">{editItem ? "Update" : "Add"}</button>
+            <button className="btnCancel" onClick={() => {
+              setModalOpen(false);
+              setEditItem(null);
+            }}>
               Cancel
             </button>
           </div>
