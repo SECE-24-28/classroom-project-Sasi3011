@@ -1,79 +1,301 @@
+/* ===========================
+   HEADER
+=========================== */
+.header {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid rgb(90, 90, 255);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.headerContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgb(90, 90, 255);
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s color ease;
+}
+
+.logo:hover {
+  color: rgb(70, 70, 230);
+}
+
+.headerNav {
+  display: flex;
+  gap: 22px;
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 15px;
+  color: #555;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: 0.2s ease;
+}
+
+.navLink:hover {
+  background: rgba(90, 90, 255, 0.1);
+  color: rgb(90, 90, 255);
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
 .container {
-  width: 500px;
-  margin: 20px auto;
-  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .title {
-  font-size: 22px;
-  margin-bottom: 15px;
+  font-size: 26px;
+  font-weight: 600;
+  color: rgb(90, 90, 255);
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(90, 90, 255);
+  margin-bottom: 25px;
 }
 
-/* Form */
-.formBox {
+/* ===========================
+   TOP BAR (Search + Button)
+=========================== */
+.topBar {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 12px;
 }
 
-.inputBox {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.btn {
-  padding: 8px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.btn:hover {
-  background: #0056b3;
-}
-
-/* Search */
-.searchBox {
-  width: 100%;
-  padding: 8px;
+.feedbackCount {
   font-size: 15px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-/* Cards */
-.cardContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.card {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: #fafafa;
-}
-
-.cardTitle {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.cardBody {
-  font-size: 14px;
   color: #444;
 }
 
-/* No result */
-.noResult {
-  margin-top: 10px;
-  font-size: 14px;
+.feedbackCount strong {
+  color: rgb(90, 90, 255);
+}
+
+/* Add Button */
+.btnAdd {
+  background: rgb(90, 90, 255);
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btnAdd:hover {
+  background: rgb(70, 70, 230);
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+.inputBox,
+.searchBox {
+  width: 80%;
+  padding: 12px 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  font-size: 15px;
+  transition: 0.2s ease;
+  background: #fff;
+}
+
+.inputBox:focus,
+.searchBox:focus {
+  border-color: rgb(90, 90, 255);
+  outline: none;
+}
+
+textarea.inputBox {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* ===========================
+   GRID FEEDBACK LIST
+=========================== */
+.feedbackGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.feedbackCard {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e4e4e4;
+  transition: 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.feedbackCard:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  border-color: rgb(90, 90, 255);
+  transform: translateY(-2px);
+}
+
+.feedbackTitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: rgb(90, 90, 255);
+  margin-bottom: 6px;
+}
+
+.feedbackDate {
+  font-size: 12px;
   color: #777;
+  margin-bottom: 10px;
+}
+
+.feedbackBody {
+  flex-grow: 1;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* ===========================
+   MODAL POPUP
+=========================== */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s ease;
+  z-index: 900;
+}
+
+.modalBox {
+  width: 450px;
+  max-width: 92%;
+  background: #fff;
+  padding: 28px;
+  border-radius: 10px;
+  animation: slideUp 0.25s ease;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+}
+
+.modalBox h2 {
+  text-align: center;
+  color: rgb(90, 90, 255);
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn {
+  background: rgb(90, 90, 255);
+  color: #fff;
+  border: none;
+  flex: 1;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn:hover {
+  background: rgb(70, 70, 230);
+}
+
+.btnCancel {
+  background: #777;
+  color: #fff;
+  flex: 1;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btnCancel:hover {
+  background: #555;
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+  .feedbackGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .headerContainer {
+    padding: 16px 20px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .container {
+    padding: 22px;
+    margin: 25px 10px;
+  }
+
+  .feedbackGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .topBar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btnAdd {
+    width: 100%;
+  }
 }
